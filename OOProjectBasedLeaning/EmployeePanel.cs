@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace OOProjectBasedLeaning
 {
 
-    public class EmployeePanel : Panel
+    public class EmployeePanel : DragDropForm
     {
 
         private Employee employee;
@@ -40,9 +41,16 @@ namespace OOProjectBasedLeaning
 
             Controls.Add(employeeNameLabel);
             Controls.Add(guestNameTextBox);
+        }
 
+            protected override void OnPanelMouseDown()
+            {
+            DoDragDropMove();
+
+            model.Name = "Drop at" +DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
         }
 
     }
 
-}
+    }
+
