@@ -45,7 +45,7 @@ namespace OOProjectBasedLeaning
 
             protected override void OnPanelMouseDown()
             {
-            DoDragDropMove();
+            　　　DoDragDropMove();
 
             model.Name = "Drop at" +DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
         }
